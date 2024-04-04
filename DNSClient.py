@@ -12,7 +12,7 @@ domainList  = ['example.com.','safebank.com.','google.com.','nyu.edu.','legitsit
 
 # Define a function to query the local DNS server for the IP address of a given domain name
 def query_local_dns_server(domain,question_type):
-    resolver = dns.resolver.Resolver(configure=False)
+    resolver = dns.resolver.Resolver()
     resolver.nameservers = [resolver.nameservers[0]]
     print(resolver.nameservers[0])
     answers = resolver.resolve(domain, question_type) # provide the domain and question_type
